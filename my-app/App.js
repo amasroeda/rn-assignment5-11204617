@@ -1,11 +1,11 @@
+//import 'react-native-gesture-handler';
 import React from 'react';
-import { StyleSheet,Text, View } from 'react-native';
-import Homepage from './components/homepage'; 
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
+import AppNavigator from './components/navigation';
 
 export default function App() {
-  return (
-      <Homepage/>
-  );
+  return <AppNavigator />;
 }
 
 const styles = StyleSheet.create({
