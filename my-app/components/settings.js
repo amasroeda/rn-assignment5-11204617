@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
         fontSize: 26,
         textAlign: 'center',
         marginBottom: 70,
-        fontWeight: '500'
+        fontFamily:'PoppinsMedium'
     },
     options: {
         flexDirection: 'row',
@@ -77,8 +77,8 @@ const styles = StyleSheet.create({
         paddingBottom: 15,
     },
     optionName: {
-        fontWeight: '400',
         fontSize: 16,
+        fontFamily:'PoppinsRegular'
     },
     next: {
         width: 24,
@@ -92,9 +92,9 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between'
     },
     themeName: {
-        fontSize: 30,
-        fontWeight: '500',
+        fontSize: 25,
         marginBottom: 10,
+        fontFamily:'PoppinsMedium'
     },
 });
 

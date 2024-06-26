@@ -14,7 +14,7 @@ const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 const HomeIcon = () => (<Image source={require('../assets/home.png')} style={{ width: 24, height: 24 }} />);
-const CardsIcon = () => (<Image source={require('../assets/myCards.png')} style={{ width: 24, height: 24 }} />);
+const CardsIcon = () => (<Image source={require('../assets/myCards.png')} style={{ width: 25, height: 24 }} />);
 const StatisticsIcon = () => (<Image source={require('../assets/statictics.png')} style={{ width: 24, height: 24 }} />);
 const SettingsIcon = () => (<Image source={require('../assets/settings.png')} style={{ width: 24, height: 24 }} />);
 
@@ -23,7 +23,7 @@ function AppNavigator() {
 
     return (
         <NavigationContainer theme={isDarkMode ? CustomDarkTheme : DefaultTheme}>
-            <Tab.Navigator screenOptions={{ headerShown: false }}>
+            <Tab.Navigator screenOptions={{ headerShown: false, tabBarLabelStyle: { fontFamily: 'PoppinsRegular'}, }}>
                 <Tab.Screen options={{ tabBarIcon: ({ focused }) => (<HomeIcon />), }} name="Home" component={Homepage} />
                 <Tab.Screen options={{ tabBarIcon: ({ focused }) => (<CardsIcon />), }} name="My Cards" component={Cards} />
                 <Tab.Screen options={{ tabBarIcon: ({ focused }) => (<StatisticsIcon />), }} name="Statistics" component={Statistics} />

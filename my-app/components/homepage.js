@@ -130,6 +130,7 @@ export default function Homepage() {
         justifyContent: 'space-between',
         marginBottom: 35,
         alignItems: 'center',
+        fontFamily:'PoppinsRegular'
     },
     headerLeft:{
         display: 'flex',
@@ -141,20 +142,18 @@ export default function Homepage() {
         width: 60,
         height: 60,
     },
-    welcomeMessage:{
-        gap: 5,
-    },
     welcome:{
         color:'#7E848D',
         fontSize: 14,
+        fontFamily:'PoppinsRegular'
     },
     user:{
         fontSize: 17,
-        fontWeight: '600',
+        fontFamily:'PoppinsMedium'
     },
     imageWrapper:{
         backgroundColor:'#E8E8E8',
-        padding: 15,
+        padding: 21,
         borderRadius: 40,
     },
     search:{
@@ -175,13 +174,14 @@ export default function Homepage() {
     },
     imageWrappers:{
         backgroundColor:'#E8E8E8',
-        paddingHorizontal: 5,
-        paddingVertical: 17,
+        paddingHorizontal: 25,
+        paddingVertical: 25,
         borderRadius: 40,
         alignItems: 'center',
     },
     name:{
         textAlign: 'center',
+        fontFamily:'PoppinsRegular'
     },
     sectionHeader: {
         marginTop: 30,
@@ -197,7 +197,7 @@ export default function Homepage() {
     sellAll:{
         fontSize: 16,
         color: '#0066FF',
-        fontWeight: '500',
+        fontFamily:'PoppinsMedium'
     },
     transaction:{
         display: 'flex',
@@ -218,20 +218,21 @@ export default function Homepage() {
         gap: 15,
     },
     heading:{
-        fontWeight: '600',
         fontSize: 18,
+        fontFamily:'PoppinsMedium'
     },
     category:{
         fontSize: 14,
         color:'#7E848D',
+        fontFamily:'PoppinsRegular'
     },
     debit:{
-        fontWeight: '500',
         fontSize: 16,
+        fontFamily:'PoppinsMedium'
     },
     credit:{
-        fontWeight: '500',
         color: '#0066FF',
         fontSize: 16,
+        fontFamily:'PoppinsMedium'
     },
     });
