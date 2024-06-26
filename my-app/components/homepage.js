@@ -1,13 +1,15 @@
-
-import React from 'react';
-import { SafeAreaView, ScrollView, View, Text, Image, StyleSheet, StatusBar, TouchableOpacity } from 'react-native';
+import React, { useContext } from 'react';
+import { SafeAreaView, ScrollView, View, Text, Image, StyleSheet, StatusBar} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { ThemeContext } from './themeContext';
 
 export default function Homepage() {
-  const navigation = useNavigation();
+    const { isDarkMode } = useContext(ThemeContext);
+    const navigation = useNavigation();
+
     return (
-      <SafeAreaView style={styles.container}>
-        <StatusBar barStyle="dark-content" />
+      <SafeAreaView style={[styles.container, { backgroundColor: isDarkMode ? '#161622' : '#fff' }]}>
+        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
         <ScrollView contentContainerStyle={styles.scrollView}>
 
             <View style={styles.header}>
@@ -15,7 +17,7 @@ export default function Homepage() {
                     <Image source={require('../assets/profile.png')} style={styles.profilePic} />
                     <View style={styles.welcomeMessage}>
                         <Text style={styles.welcome}>Welcome back,</Text>
-                        <Text style={styles.user}>Eric Atsu</Text>
+                        <Text style={[styles.user, { color: isDarkMode ? '#fff' : '#000' }]}>Eric Atsu</Text>
                     </View>   
                 </View>
                 <View style={styles.imageWrapper}>
@@ -30,30 +32,30 @@ export default function Homepage() {
                     <View style = {styles.imageWrapper}>
                         <Image source={require('../assets/send.png')} style={styles.icon} />
                     </View>
-                    <Text style = {styles.name}>Sent</Text>
+                    <Text style = {[styles.name, { color: isDarkMode ? '#fff' : '#000' }]}>Sent</Text>
                 </View>
                 <View style={styles.optionButton}>
                     <View style = {styles.imageWrappers}>
                         <Image source={require('../assets/recieve.png')} style={styles.icon} />
                     </View>
-                    <Text style = {styles.name}>Receive</Text>
+                    <Text style = {[styles.name, { color: isDarkMode ? '#fff' : '#000' }]}>Receive</Text>
                 </View>
                 <View style={styles.optionButton}>
                     <View style = {styles.imageWrapper}>
                         <Image source={require('../assets/loan.png')} style={styles.icon} />
                     </View>
-                    <Text style = {styles.name}>Loan</Text>
+                    <Text style = {[styles.name, { color: isDarkMode ? '#fff' : '#000' }]}>Loan</Text>
                 </View>
                 <View style={styles.optionButton}>
                 <View style = {styles.imageWrapper}>
                     <Image source={require('../assets/topUp.png')} style={styles.icon} />
                 </View>
-                    <Text style = {styles.name}>Topup</Text>
+                    <Text style = {[styles.name, { color: isDarkMode ? '#fff' : '#000' }]}>Topup</Text>
                 </View>
             </View>
 
             <View style={styles.sectionHeader}>
-              <Text style={styles.sectionTitle}>Transaction</Text>
+              <Text style = {[styles.sectionTitle, { color: isDarkMode ? '#fff' : '#000' }]}>Transaction</Text>
                 <Text style={styles.sellAll}>Sell all</Text>
             </View>
 
@@ -65,11 +67,11 @@ export default function Homepage() {
                             <Image source = {require('../assets/apple.png')} style={styles.logo}/>
                         </View>
                         <View style={styles.transactionInfo}>
-                            <Text style={styles.heading}>Apple Store</Text>
+                            <Text style={[styles.heading, { color: isDarkMode ? '#fff' : '#000' }]}>Apple Store</Text>
                             <Text style={styles.category}>Entertainment</Text>
                         </View>
                     </View>
-                    <Text style={styles.debit}>-$5,99</Text>
+                    <Text style={[styles.debit, { color: isDarkMode ? '#fff' : '#000' }]}>-$5,99</Text>
                 </View>
 
                 <View style={styles.transactionMade}>
@@ -78,11 +80,11 @@ export default function Homepage() {
                             <Image source = {require('../assets/spotify.png')} style={styles.logo}/>
                         </View>
                         <View style={styles.transactionInfo}>
-                            <Text style={styles.heading}>Spotify</Text>
+                            <Text style={[styles.heading, { color: isDarkMode ? '#fff' : '#000' }]}>Spotify</Text>
                             <Text style={styles.category}>Music</Text>
                         </View>
                     </View>
-                    <Text style={styles.debit}>-$12,99</Text>
+                    <Text style={[styles.debit, { color: isDarkMode ? '#fff' : '#000' }]}>-$12,99</Text>
                 </View>
 
                 <View style={styles.transactionMade}>
@@ -91,7 +93,7 @@ export default function Homepage() {
                             <Image source = {require('../assets/moneyTransfer.png')} style={styles.logo}/>
                         </View>
                         <View style={styles.transactionInfo}>
-                            <Text style={styles.heading}>Money Transfer</Text>
+                            <Text style={[styles.heading, { color: isDarkMode ? '#fff' : '#000' }]}>Money Transfer</Text>
                             <Text style={styles.category}>Transaction</Text>
                         </View>
                     </View>
@@ -104,33 +106,13 @@ export default function Homepage() {
                             <Image source = {require('../assets/grocery.png')} style={styles.logo}/>
                         </View>
                         <View style={styles.transactionInfo}>
-                            <Text style={styles.heading}>Grocery</Text>
+                            <Text style={[styles.heading, { color: isDarkMode ? '#fff' : '#000' }]}>Grocery</Text>
                             <Text style={styles.category}>Necessity</Text>
                         </View> 
                     </View>
-                    <Text style={styles.debit}>-$88</Text>
+                    <Text style={[styles.debit, { color: isDarkMode ? '#fff' : '#000' }]}>-$88</Text>
                 </View>
               </View>
-
-              <View style = {styles.navigationBar}>      
-                <TouchableOpacity  style={styles.button}>
-                    <Image source={require('../assets/home.png')} style={styles.navIcon} />
-                    <Text style = {styles.names}>Home</Text>
-                </TouchableOpacity>
-                <TouchableOpacity  style={styles.button}>
-                    <Image source={require('../assets/myCards.png')} style={styles.navIcon} />
-                    <Text style = {styles.names}>My Cards</Text>
-                </TouchableOpacity>
-                <TouchableOpacity  style={styles.button}>
-                    <Image source={require('../assets/statictics.png')} style={styles.navIcon} />
-                    <Text style = {styles.names}>Statistics</Text>
-                </TouchableOpacity>
-                <TouchableOpacity  style={styles.button}>
-                    <Image source={require('../assets/settings.png')} style={styles.navIcon} onPress={() => navigation.navigate('Settings')}/>
-                    <Text style = {styles.names}>Settings</Text>
-                </TouchableOpacity>
-            </View>   
-              
         </ScrollView>
         
       </SafeAreaView>
@@ -171,7 +153,7 @@ export default function Homepage() {
         fontWeight: '600',
     },
     imageWrapper:{
-        backgroundColor:'#F4F4F4',
+        backgroundColor:'#E8E8E8',
         padding: 15,
         borderRadius: 40,
     },
@@ -192,7 +174,7 @@ export default function Homepage() {
         gap: 5,
     },
     imageWrappers:{
-        backgroundColor:'#F4F4F4',
+        backgroundColor:'#E8E8E8',
         paddingHorizontal: 5,
         paddingVertical: 17,
         borderRadius: 40,
@@ -252,19 +234,4 @@ export default function Homepage() {
         color: '#0066FF',
         fontSize: 16,
     },
-    navigationBar:{
-        direction: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginBottom: 20,
-        alignItems: 'center',
-    },
-    button:{
-        alignItems: 'center',
-        gap: 5,
-    },
-    names:{
-        color:'#7E848D',
-    },
-
     });
